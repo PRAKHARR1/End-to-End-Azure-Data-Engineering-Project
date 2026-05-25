@@ -5,8 +5,14 @@
 		"factoryName": {
 			"value": "cfare-adf"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://cfstorageaccont.dfs.core.windows.net/"
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com"
