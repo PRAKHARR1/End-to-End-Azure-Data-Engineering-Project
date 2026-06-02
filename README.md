@@ -1,30 +1,23 @@
 # End-to-End Azure Data Engineering Project
 
-## Project Overview
+## Overview
 
-This project demonstrates the implementation of a complete Azure Data Engineering solution using Azure Data Factory, Azure Data Lake Storage Gen2, Azure Databricks, and Azure SQL Database. The solution is designed to ingest raw CSV files, process them through a Medallion Architecture (Bronze, Silver, and Gold layers), and generate analytics-ready datasets in Parquet format.
+This project demonstrates the implementation of an end-to-end Azure Data Engineering solution using Azure Data Factory, Azure Data Lake Storage Gen2, Azure Databricks, Azure SQL Database, and GitHub. The solution follows the Medallion Architecture (Bronze, Silver, and Gold layers) to ingest, process, and transform data into analytics-ready datasets stored in Parquet format.
 
-The project focuses on building a scalable, automated, and maintainable data pipeline that supports incremental data processing and follows modern data engineering best practices.
+The project was designed to automate data ingestion, implement incremental data processing, and build a scalable data pipeline following modern data engineering best practices.
 
 ---
 
 ## Architecture
 
-Source CSV Files
-↓
-Azure Data Factory (ADF)
-↓
-ADLS Gen2 Bronze Layer
-↓
-Azure Databricks (PySpark Transformations)
-↓
-ADLS Gen2 Silver Layer
-↓
-Azure Databricks (Business Transformations)
-↓
-ADLS Gen2 Gold Layer
-↓
-Parquet Output Files
+GitHub Repository (Source Data)
+→ Azure Data Factory (ADF)
+→ ADLS Gen2 Bronze Layer
+→ Azure Databricks (PySpark Processing)
+→ ADLS Gen2 Silver Layer
+→ Azure Databricks (Business Transformations)
+→ ADLS Gen2 Gold Layer
+→ Parquet Output Files
 
 ---
 
@@ -36,68 +29,58 @@ Parquet Output Files
 * PySpark
 * Azure SQL Database
 * GitHub
-* Parquet File Format
+* Parquet
 
 ---
 
 ## Data Processing Workflow
 
-### Bronze Layer (Raw Data)
+### Bronze Layer
 
-* Ingest raw CSV files using Azure Data Factory.
-* Store source data without modifications.
-* Maintain historical records for auditing and reprocessing.
+* Ingest source data from GitHub using Azure Data Factory.
+* Store raw data in ADLS Gen2.
+* Preserve source data for auditing and reprocessing.
 
-### Silver Layer (Cleaned Data)
+### Silver Layer
 
 * Perform data cleansing and validation.
-* Handle null values and datatype conversions.
+* Handle null values and data type conversions.
 * Remove duplicate records.
-* Standardize data structure for downstream processing.
+* Standardize datasets for downstream processing.
 
-### Gold Layer (Business Data)
+### Gold Layer
 
 * Apply business transformation logic.
 * Create analytics-ready datasets.
 * Implement incremental data loading.
-* Store optimized data in Parquet format.
+* Store optimized Parquet files for reporting and analytics.
+
+---
+
+## Incremental Loading
+
+This project uses an incremental loading strategy to process only new or modified records instead of reprocessing the entire dataset.
+
+### Benefits
+
+* Reduced execution time
+* Lower compute costs
+* Improved pipeline performance
+* Better scalability
+* Efficient resource utilization
 
 ---
 
 ## Key Features
 
-* End-to-End Data Pipeline Development
-* Medallion Architecture Implementation
-* Automated Data Ingestion using ADF
-* Data Transformation using PySpark
-* Incremental Data Loading
+* End-to-End Azure Data Engineering Pipeline
+* GitHub-Based Data Ingestion
+* Medallion Architecture (Bronze, Silver, Gold)
+* Incremental Data Processing
+* PySpark-Based Transformations
+* Automated Workflow Orchestration using ADF
 * Parquet-Based Optimized Storage
 * GitHub Version Control Integration
-* Scalable Cloud-Based Architecture
-
----
-
-## Incremental Load Strategy
-
-The project uses an incremental loading approach to process only new or modified records instead of reprocessing the entire dataset.
-
-Benefits:
-
-* Reduced execution time
-* Lower compute cost
-* Improved performance
-* Better scalability
-
----
-
-## Output
-
-The final transformed datasets are stored in the Gold layer as Parquet files, providing:
-
-* Faster query performance
-* Efficient storage utilization
-* High compression
-* Better compatibility with analytical workloads
 
 ---
 
@@ -107,18 +90,18 @@ The final transformed datasets are stored in the Gold layer as Parquet files, pr
 * Databricks job monitoring
 * Activity-level error tracking
 * Execution status monitoring
-* Retry mechanisms for transient failures
+* Retry handling for transient failures
 
 ---
 
-## Project Highlights
+## Output
 
-* Built an end-to-end Azure Data Engineering solution.
-* Implemented Bronze, Silver, and Gold data layers.
-* Automated ingestion and transformation workflows.
-* Processed data using Azure Databricks and PySpark.
-* Implemented incremental data processing.
-* Delivered analytics-ready Parquet datasets.
+The final transformed datasets are stored in the Gold layer in Parquet format, providing:
+
+* Faster query performance
+* Efficient storage utilization
+* High compression
+* Optimized analytics workloads
 
 ---
 
@@ -133,5 +116,7 @@ The final transformed datasets are stored in the Gold layer as Parquet files, pr
 ---
 
 ## Author
+
+Developed as an End-to-End Azure Data Engineering Project using Azure Data Factory, ADLS Gen2, Azure Databricks, PySpark, Azure SQL Database, and GitHub following industry-standard data engineering practices.
 
 Azure Data Engineering Project developed using Azure Data Factory, ADLS Gen2, Azure Databricks, PySpark, Azure SQL Database, and GitHub following modern data engineering best practices.
